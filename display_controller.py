@@ -132,7 +132,7 @@ class DisplayController(object):
 
             with open('/proc/uptime', 'r') as f:
                 uptime_seconds = float(f.readline().split()[0])
-                return str(timedelta(seconds=uptime_seconds))
+                return str(timedelta(seconds=uptime_seconds))[:-7]
 
         self.draw_text(x, y, get_system_uptime(), font=font, fill=fill)
 
